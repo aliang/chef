@@ -58,7 +58,8 @@ class Chef
   class CookbookSynchronizer
     def initialize(cookbooks_by_name, events)
       @eager_segments = Chef::CookbookVersion::COOKBOOK_SEGMENTS.dup
-      unless Chef::Config[:no_lazy_load]
+      unless true
+      # unless Chef::Config[:no_lazy_load]
         @eager_segments.delete(:files)
         @eager_segments.delete(:templates)
       end
